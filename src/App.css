@@ -1,0 +1,56 @@
+body {
+  margin: 2em;
+}
+
+input {
+  margin-right: 0.5em;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #4ABDAC;
+  height: 100px;
+  padding: 40px;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+}
+
+.App-header h1 {
+  font-size: 320%;
+  font-weight: 100;
+}
+.App-intro {
+  font-size: large;
+}
+
+/*.meu-form {
+  display: inline-block;
+}*/
+
+.form-custom {
+  justify-content: center;
+  padding: 30px;
+}
+
+.pure-button-primary {
+  background-color: lightpink;
+  color: white;
+}
+
+#removeButton {
+  color: pink;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: white;
+}
+
+#contact-show h2 a{
+  text-decoration: none;
+  color: #1abc9c;
+}
+
+#add-button {
+  color: forestgreen;
+}
