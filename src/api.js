@@ -1,31 +1,26 @@
-const endpoint = 'http://localhost:3000/v1';
 
-const headers = () => {
-  const h = new Headers();
+// const headers = () => {
+//   const h = new Headers();
   
-  h.append('Content-Type', 'application/json');
-  return h;
-};
+//   h.append('Content-Type', 'application/json');
+//   return h;
+// };
 
-const request = (method, path, body) => {
-  const url = `${endpoint}${path}`;
-  const options = { method, headers: headers() }
+// const request = (method, path, body) => {
+//   const url = 'https://api.giphy.com/v1/gifs/search?api_key=eebf3c5925444f7795113971df688682&q=minions&limit=5&offset=0&rating=G&lang=en';
+//   const options = { method, headers: headers() }
 
-  if(body) {
-    options.body = JSON.stringify(body);
-  }
+//   if(body) {
+//     options.body = JSON.stringify(body);
+//   }
 
-  return (fetch(new Request(url, options)))
-};
+//   return (fetch(new Request(url, options)))
+// };
 
-const Api = {
-  get(path) {
-    return request('GET', path);
-  },
+// const Api = {
+//   get(path) {
+//     return request('GET', path);
+//   },
+// }
 
-  post(path, data = {}) {
-    return request('POST', path, data);
-  },
-}
-
-export default Api;
+// export default Api;

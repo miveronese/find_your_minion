@@ -1,61 +1,67 @@
 import React, { Component } from 'react';
-import Minion from './Minion';
-import { observer } from 'mobx-react';
 import './App.css';
-import { inject } from 'mobx-react';
 
-const MyForm = observer(['minions'], 
-  class MyForm extends Component {
-    componentWillMount() {
-      this.props.minions.fetchAll();    
-    }
+class MyForm extends Component {
+  constructor() {
+    super();
+    this.state = { url: "bla" };
+    // this.addMinion = this.addMinion.bind(this);
 
-    addMinion = (e) => {
-      e.preventDefault();
-
-      this.props.minions.add({ 
-        first_name: this.refs.first_name.value,
-        last_name: this.refs.last_name.value,
-        email: this.refs.email.value,
-      });
-
-      this.refs.first_name.value = null;
-      this.refs.last_name.value = null;
-      this.refs.email.value = null;
-    };
-
-    newMinion = () =>
-        <form className='form-custom pure-form pure-g' onSubmit={this.addMinion}> 
-          <div class="pure-u-12">
-            <input className='pure-input' ref='email' type='email' placeholder='email' /> 
-          </div>
-          <div class="pure-u-12">
-            <input className='pure-input' ref='first_name' type='text' placeholder='first name' />
-          </div>  
-          <div class="pure-u-12">
-            <input className='pure-input' ref='last_name' type='text' placeholder='last name' />
-          </div>
-          <button type='submit' className='pure-button pure-button-primary'> + </button>
-        </form>
-   
-
-    render() {
-      return (
-        <div id='container'>
-          <div className='meu-form'>
-            {this.newMinion()}
-          </div>
-          <div className='pure-g'>
-            {this.props.minions.all.slice().map(x => 
-              <Minion key={x.id.toString()} {...x} />
-            )}
-          </div>
-        </div>   
-      );
-    }
   }
-)
+
+  // componentWillMount() {
+  //   this.setState ({
+  //     minions: { url: "http://google.com"},
+  //   });
+  // }
+
+  addMinion = (e) => {
+    // const url = 'https://api.giphy.com/v1/gifs/search?api_key=eebf3c5925444f7795113971df688682&q=minions&limit=5&offset=0&rating=G&lang=en';
+    e.preventDefault();
+    this.setState(prevState => ({
+      url: "bli"
+    }));
+    console.log(this.state);
+    console.log(this);
+    console.log(this.setState.url);
 
 
+    // fetch(url)
+    //   .then(function(response) {
+    //     return response;
+    //   })
+
+    //   .then(function(data) {
+    //     // console.log(data)
+    //     this.setState({
+    //         url: url  
+    //     });
+    //   })
+  }
+
+  newMinion = () =>
+      <form className='form-custom pure-form pure-g' onSubmit={this.addMinion}> 
+        <div className="pure-u-12">
+          <input className='pure-input' ref='minion' type='text' placeholder='search' /> 
+        </div>
+
+        <button type='submit' className='pure-button pure-button-primary'> { this.state.url } </button>
+      </form>
+ 
+
+  render() {
+    return (
+      <div id='container'>
+
+        <div className='meu-form'>
+          {this.newMinion()}
+        </div>
+        <div className='my-minions'>
+          {  }
+        </div>
+      </div>   
+    );
+  }
+}
 
 export default MyForm;

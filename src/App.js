@@ -11,12 +11,11 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h1>A simple form with Mobx and PureCss</h1>
+          <h1>Find your Minion</h1>
         </div>
         <p className="App-intro">
         </p>
           <Route exact path='/' component={MyForm}/>
-            <Route path='/minions/:minionId' component={Minion}/>
       </div>
     );
   }
