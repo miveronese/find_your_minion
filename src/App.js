@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import {  BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import MyForm from './MyForm';
-import Minion from './Minion';
-
 
 class App extends Component {
   render() {
