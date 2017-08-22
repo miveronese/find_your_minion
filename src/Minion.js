@@ -8,7 +8,8 @@ class Minion extends Component {
     return(
       <div className='pure-u-1-3' id='contact-show'>
         <h4>
-          { this.props.url }
+          {this.props.urls.map(x => 
+            <img src={x} key={x} > {x} </img> )}
         </h4>
       </div>
     );
