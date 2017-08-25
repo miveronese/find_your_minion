@@ -16,7 +16,7 @@ class MyForm extends Component {
   }
 
   addMinion = (e) => {
-    const url = 'https://api.giphy.com/v1/gifs/search?api_key=eebf3c5925444f7795113971df688682&q=minion '+this.state.user_input+'&limit=5&offset=0&rating=G&lang=en';
+    const url = 'https://api.giphy.com/v1/gifs/search?api_key=eebf3c5925444f7795113971df688682&q=minion '+this.state.user_input+'&limit=1&offset=0&rating=G&lang=en';
     e.preventDefault();
     fetch(url)
       .then(response => {
